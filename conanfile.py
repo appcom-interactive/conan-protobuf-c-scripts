@@ -21,7 +21,12 @@ class ProtobufConan(ConanFile):
         tools.replace_in_file("%s/protobuf-c-%s/build-cmake/CMakeLists.txt" % (self.source_folder, self.version),
             "PROJECT(protobuf-c)",
             """PROJECT(protobuf-c)
-include(${CMAKE_BINARY_DIR}/conan_paths.cmake) """)
+            set(CMAKE_CXX_STANDARD 11)
+            set(CMAKE_CXX_STANDARD_REQUIRED ON)
+            set(CMAKE_CXX_EXTENSIONS OFF)
+            set(CMAKE_C_STANDARD 11)
+            set(CMAKE_C_STANDARD_REQUIRED ON)
+            include(${CMAKE_BINARY_DIR}/conan_paths.cmake) """)
 
     # compile using cmake
     def build(self):
