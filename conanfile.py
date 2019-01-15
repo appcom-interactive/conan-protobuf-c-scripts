@@ -4,12 +4,12 @@ import os
 class ProtobufConan(ConanFile):
     name = "protobufc"
     version = "1.3.1"
-    author = "Ralph-Gordon Paul (gordon@rgpaul.com)"
+    author = "Ralph-Gordon Paul (g.paul@appcom-interactive.de)"
     settings = "os", "compiler", "build_type", "arch"
     options = {"shared": [True, False], "android_ndk": "ANY", "android_stl_type":["c++_static", "c++_shared"]}
     default_options = "shared=False", "android_ndk=None", "android_stl_type=c++_static"
     description = "Protocol Buffers implementation in C"
-    url = "https://github.com/Manromen/conan-protobuf-c-scripts"
+    url = "https://github.com/appcom-interactive/conan-protobuf-c-scripts"
     exports_sources = "cmake-modules/*"
     generators = "cmake_paths"
 
